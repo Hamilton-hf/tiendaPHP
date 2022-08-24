@@ -24,10 +24,28 @@
 		public function getRoles()
 		{
 			$arrData =$this->model->selectRoles();
-			//dep funcion en helpers
-			//dep($arrData);
 
-			//formato json para que sea leido desde cualquier lenguaje de programaci[on]
+			//recorrer para estado
+			for($i=0; $i < count($arrData);$i++)
+			{
+				if($arrData[$i]['status'] ==1 )
+				{
+					$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
+				}
+				else{
+					$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
+				}
+
+				$arrData[$i]['options'] = '<div class="text-center">
+				<button class="btn btn-secondary btn-sm btnPermisosRol" rl="'.$arrData[$i]['idrol'].'" title="Permisos"><i class="fas fa-key">Perm.</i></button>
+				<button class="btn btn-primary btn-sm btnEditRol" rl="'.$arrData[$i]['idrol'].'" title="Editar"><i class="fas fa-pencil-alt">Edit</i></button>
+				<button class="btn btn-danger btn-sm btnDelRol" rl="'.$arrData[$i]['idrol'].'" title="Eliminar"><i class="far fa-trash-alt">Eliminar</i></button>
+				</div>';
+
+			}
+		//	dep($arrData[0]['status']);exit;
+
+
 			echo json_encode($arrData,JSON_UNESCAPED_UNICODE);
 			die();
 		}

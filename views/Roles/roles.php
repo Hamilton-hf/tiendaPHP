@@ -34,7 +34,8 @@
                           <th>ID</th>
                           <th>Nombre</th>
                           <th>Descripci[on</th>
-                          <th>Status</th>                          
+                          <th>Status</th>    
+                          <th>Acciones</th>                         
                         </tr>
                       </thead>
                       <tbody>

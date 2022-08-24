@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"nombrerol"},
             {"data":"descripcion"},
             {"data":"status"},
+            {"data": "options"}
           
         ],
         "resonsieve":"true",
